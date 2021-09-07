@@ -1,0 +1,45 @@
+/* social */
+.social {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.social ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.social li {
+  margin: 0 30px;
+  @include mobile {
+    margin: 0 20px;
+  }
+
+  a {
+    display: inline-block;
+    color: #6b7780;
+    &:hover {
+      color: #2a4365;
+    }
+  }
+
+  i {
+    font-size: 33px;;
+  }
+}
+
+
+/* footer */
+.footer {
+  margin: 30px auto 20px;
+}
+
+p.copyright {
+  font-size: 14px;
+  line-height: 25px;
+  letter-spacing: 1.4px;
+  text-align: center;
+}

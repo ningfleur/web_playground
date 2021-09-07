@@ -1,0 +1,364 @@
+@charset "UTF-8";
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", "Noto Sans TC", "微軟正黑體", "Microsoft JhengHei", "PingFang", sans-serif;
+  background-color: #F8F8F8;
+  // scroll-behavior: smooth; 
+}
+
+a {
+  text-decoration: none;
+  color: #2A4365;
+  &:hover {
+    color: #AF9C71;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+.grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 15px;
+  margin: 80px auto 0;
+}
+
+.grid > * {
+  grid-column: 4 / 10;
+  @include pad {
+    grid-column: 3 / 11;
+  }
+  @include mobile {
+    grid-column: 1 / 13;
+    padding: 0 20px;
+  }
+}
+
+.grid > img {
+  grid-column: 1 / 13;
+  padding: 0 20px;
+  margin: 180px auto 0;
+  @include mobile {
+    margin-top: 160px;
+  }
+}
+
+p {
+  margin: 20px 0;
+  font-size: 18px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  color: #000000;
+  font-weight: 400;
+}
+
+p + p {
+  margin: 15px 0;
+}
+
+p > a {
+  color: #2A4365;
+  border-bottom: 2px solid #2A4365;
+  transition: all 0.3s;
+  &:hover {
+    color: #AF9C71;
+    border-bottom: 2px solid #AF9C71;
+  }
+}
+
+h2, h3, h4 {
+  margin: 20px auto;
+}
+
+h1 {
+  font-size: 70px;
+  line-height: 85px;
+  font-weight: 800;
+  margin: 0;
+  @include pad {
+    font-size: 70px;
+  }
+  @include mobile {
+    font-size: 48px;
+  }
+  @include smallScreen {
+    font-size: 36px;
+  }
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  @include pad {
+    font-size: 27px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+  }
+}
+
+h3.graphicTitle {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 600;
+  margin: 50px auto 10px;
+  text-align: center;
+}
+
+h4.graphicSubtitle {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 300;
+  margin: 10px auto 20px;
+  text-align: center;
+}
+
+h3.eventDate {
+  font-size: 20px;
+  line-height: 20px;
+  margin: 0;
+  text-align: left;
+  font-weight: 500;
+  margin-top: 180px;
+  @include mobile {
+    margin-top: 160px;
+  }
+}
+
+h2.eventTitle {
+  font-size: 28px;
+  line-height: 34px;
+  margin: 6px 0 0;
+  font-weight: 500;
+  text-align: left;
+}
+
+p.subhead {
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: 300;
+  margin-top: 26px;
+}
+
+p.description {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+p.header-meta {
+  white-space: pre-wrap;
+  font-size: 12px;
+  line-height: 1.65;
+  font-weight: 300;
+  padding-top: 60px;
+}
+
+p.caption-meta {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 23.8px;
+  margin-top: 16px;
+  margin-bottom: 60px;
+  white-space: pre-wrap;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+/*--------cover--------*/
+.header {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1EFE9;
+}
+
+.header img {
+  max-width: 900px;
+  @include pad {
+    max-width: 600px;
+  }
+
+  @include mobile {
+    max-width: 300px;
+  }
+}
+
+.title-block {
+  // max-width: 1200px;
+  max-width: 631px;
+  //控制標題寬度，選631是配合grid
+  margin-top: 30px;
+  /* 父層已經設定flex置中對齊，這裡不需要再設。文字齊左才要設寬度100%，*/
+
+  @include pad {
+    padding: 0 20px;
+  }
+
+  @include smallScreen{
+    margin-top: 0;
+  }
+}
+
+.desktopImg {
+  display: block;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.mobileImg {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+}
+
+// 月份錨點
+.month_nav {
+  position: fixed;
+  top: calc((100vh - 432px)/2);
+  left: 30px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  opacity: 0;
+  @include pad {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    flex-direction: row;
+    padding: 60px 20px 0;
+  }
+}
+
+.month_nav li {
+  display: block;
+  width: 100%;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.month_nav a {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  font-style: italic;
+  display: block;
+  margin: 6px 0;
+  text-align: right;
+  padding-left: 10px;
+  color: rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  border-left: 3px solid rgba(0, 0, 0, 0);
+
+  @include pad {
+    text-align: center;
+    padding-left: 0;
+    padding: 6px;
+    margin: 0 3px;
+    border-left: 0px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0);
+  }
+
+  @include mobile {
+    margin: 0;
+  }
+}
+
+.month_nav .anchor:hover {
+  color: rgba(0, 0, 0, 0.3);
+  border-left: 3px solid rgba(0, 0, 0, 0.3);
+  @include pad {
+    border-left: 0;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+  }
+}
+
+a.active {
+  color: rgba(0, 0, 0, 0.6);
+  border-left: 3px solid rgba(0, 0, 0, 0.6);
+  @include pad {
+    border-left: 0;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.6);
+  }
+}
+
+.month_nav a span {
+  margin-left: -2px;
+  @include pad {
+    display: none;
+  }
+}
+
+// 月份主圖
+.feature_wrap {
+  width: 100%;
+  margin: 0;
+  margin-top: 180px;
+  display: block;
+  position: relative;
+
+  .num {
+    position: absolute;
+    top: 50px;
+    left: 60px;
+    font-family: "Lato", sans-serif;
+    font-size: 200px;
+    line-height: 1;
+    font-weight: 400;
+    font-style: italic;
+    color: #FFFFFF;
+    opacity: 0.7;
+    @include pad {
+      font-size: 150px;
+      top: 10px;
+      left: 10px;
+    }
+    @include mobile {
+      font-size: 80px;
+      top: 0;
+      left: 30px;
+    }
+  }
+}
+
+.feature_wrap img {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}

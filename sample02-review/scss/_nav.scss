@@ -1,0 +1,250 @@
+nav {
+  position: fixed;
+  width: 100%;
+  cursor: pointer;
+  z-index: 1003;
+  @include pad {
+    background-color: rgba(0, 0, 0, 0.75);
+    height: 62px;
+  }
+}
+
+nav .left-block {
+  display: block; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 12px 0 0 10px;
+  @include pad {
+    margin: 12px 0 0 20px;
+  }
+  @include mobile {
+    margin: 12px 0 0 10px;
+  }
+}
+
+nav img.logoImage {
+  display: block;
+  z-index: 1003;
+  width: 105px;
+  display: block;
+}
+
+nav .ham {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 12px 10px 0 0;
+  cursor: pointer;
+  z-index: 1003;
+  @include pad {
+    margin: 12px 20px 0 0;
+  }
+  @include mobile {
+    margin: 12px 10px 0 0;
+  }
+
+  &::after {
+    content: 'menu';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition-duration: 0.3s;
+    @include pad {
+      color: #ffffff;
+    }
+  }
+
+  &:hover {
+    &::after {
+      color: #000000;
+    }
+  }
+  
+  &.active {
+    .ham-button b:nth-child(1) {
+      transform: translateY(10px) translateX(0) rotate(45deg);
+    }
+    .ham-button b:nth-child(2) {
+      opacity: 0;
+    }
+    .ham-button b:nth-child(3) {
+      transform: translateY(-10px) translateX(0) rotate(-45deg);
+    }
+    &::after {
+      content: 'close';
+    }
+  }
+}
+
+nav .ham .ham-button {
+  position: relative;
+  width: 34px;
+  height: 42px;
+  cursor: pointer;
+  @include pad {
+    width: 34px;
+    height: 42px;
+  }
+}
+
+nav .ham .ham-button b {
+  background-color: #4d4d4d;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform: left 0.3s;
+  @include pad {
+    background-color: #ffffff;
+  }
+}
+
+nav .ham .ham-button b:nth-child(1) {
+  top: 4%;
+  transition: 0.5s all;
+}
+
+nav .ham .ham-button b:nth-child(2) {
+  top: 27%;
+  transition: 0.5s all;
+}
+
+nav .ham .ham-button b:nth-child(3) {
+  top: 50%;
+  transition: 0.5s all;
+}
+
+
+
+/* 選單內容 */
+nav .fullscreen {
+  position: fixed;
+  background-color: #DDDDDD;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+  a {
+    text-decoration: none;
+  }
+}
+
+nav .fullscreen.open {
+  opacity: 1;
+  visibility: visible;
+  min-height: 100%;
+  z-index: 1002;
+}
+
+nav .wrap_menu {
+  width: 100%;
+  height: 100%;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+nav ul.menu li {
+  padding: 30px 0;
+  text-align: right;
+  
+  &:hover {
+    span.zh, span.en {
+      color: #2a4365;
+    }
+  }
+
+  span {
+    display: block;
+  }
+
+  span.zh {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 400;
+    color: #4d4d4d;
+    @include mobile {
+      margin-bottom: 7px;
+      font-size: 18px;
+    }
+  }
+
+  span.en {
+    font-size: 16px;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: #b5b5b5;
+    @include mobile {
+      font-size: 14px;
+    }
+  } 
+}
+
+.sns-booking {
+  margin-top: 30px;
+}
+
+.sns-booking a {
+  display: block;
+  text-align: right;
+  transition: 0.3s;
+  color: #2a4365;
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+button.subscribe-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  min-width: 140px;
+  border: 2px solid #2a4365;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition-duration: all 0.2s;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  &:hover {
+    background-color: #2a4365;
+    color: #ffffff;
+  }
+}
+
+.wrap_social {
+  min-width: 140px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.wrap_social li {
+  margin: 0 15px;
+
+  a {
+    display: inline-block;
+    color: #6b7780;
+    &:hover {
+      color: #2a4365;
+    }
+  }
+
+  i {
+    font-size: 33px;;
+  }
+}
+
+
+
