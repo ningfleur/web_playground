@@ -1,7 +1,5 @@
 @import 'variables';
 
-
-
 *, *::before, *::after {
   box-sizing: border-box;
   // outline: 1px solid lightgreen; 
@@ -20,7 +18,6 @@ p {
   font-size: 16px;
 }
 
-
 // global css
 .grid3-11 {
   grid-column: 3/11;
@@ -34,28 +31,6 @@ p {
   grid-column: 1/13;
 }
 
-// .d-flex{
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-// }
-
-// .pl-15 {
-//   padding-left: 15px;
-// }
-// .mt-18 {
-//   margin-top: 18px;
-// }
-// .mt-22 {
-//   margin-top: 22px;
-// }
-// .mb-50 {
-//   margin-bottom: 50px;
-// }
-// .mb-200 {
-//   margin-bottom: 200px;
-// }
-
 .mb-150 {
   margin-bottom: 150px;
 }
@@ -63,235 +38,6 @@ p {
 .mb-100 {
   margin-bottom: 100px;
 }
-
-
-
-
-/*   <!-- iconfont版本開始 -->   */
-// nav {
-//   padding-top: 12px;
-//   position: fixed;
-//   width: 100%;
-//   top: 0px;
-//   left: 0px;
-//   z-index: 10;
-//   margin-left: 0;
-//   margin-right: 0;
-// }
-
-// .nav_inner {
-//   width: 100%;
-//   margin-left: 0;
-//   margin-right: 0;
-//   position: relative;
-// }
-
-// nav a.logo-img {
-//   font-size: 34px;
-//   margin-right: 17px;
-//   margin-left: 35px;
-//   padding: 2px 0;
-//   pointer-events: auto;
-//   vertical-align: middle;
-//   color: #ffffff;
-// }
-
-// nav .ham {
-//   position: fixed;
-//   top: 20px;
-//   right: 34px;
-//   width: 34px;
-//   height: 20px;
-//   line-height: 1;
-//   cursor: pointer;
-//   z-index: 1003;
-//   pointer-events: auto;
-//   margin-bottom: 1.25rem;
-//   display: inline-block;
-// }
-
-// nav .ham::after {
-//   content: "menu";
-//   display: block;
-//   position: absolute;
-//   top: calc(100% + 0.5rem);
-//   width: 100%;
-//   color: #ffffff;
-//   font-size: 0.75rem;
-//   letter-spacing: 0.2em;
-//   text-align: center;
-//   transition: all 0.3s;
-// }
-
-// .McButton {
-//   width: 35px;
-//   height: 20px;
-// }
-
-// .McButton b {
-//   position: absolute;
-//   left: 0;
-//   width: 34px;
-//   height: 2px;
-//   background-color: #ffffff;
-// }
-
-// .McButton b:nth-child(1) {
-//   top: 0;
-//   transition: 0.5s all;
-// }
-
-// .McButton b:nth-child(2) {
-//   top: 50%;
-//   transition: 0.5s all;
-// }
-
-// .McButton b:nth-child(3) {
-//   top: 100%;
-//   transition: 0.5s all;
-// }
-
-// nav .ham:active .McButton b:nth-child(1) {
-//   top: 50%;
-//   transform: rotateZ(45deg);
-// }
-
-// nav .ham:active .McButton b:nth-child(2) {
-//   opacity: 0;
-// }
-
-// nav .ham:active .McButton b:nth-child(3) {
-//   top: 50%;
-//   transform: rotateZ(-45deg);
-// }
-
-// nav .ham:hover .McButton b:nth-child(1),
-// nav .ham:hover .McButton b:nth-child(3) {
-//   left: -3px !important;
-// }
-
-// nav .ham:hover .McButton b:nth-child(2) {
-//   left: 3px !important;
-// }
-
-// nav .ham.active::after {
-//   content: "close";
-// }
-
-// nav .ham.active:hover .McButton b:nth-child(1),
-// nav .ham.active:hover .McButton b:nth-child(2),
-// nav .ham.active:hover .McButton b:nth-child(3) {
-//   left: 0px !important;
-// }
-
-
-// @media (max-width: 768px) {
-//   nav {
-//     padding-top: 10px;
-//   }
-//   nav a.logo-img {
-//     font-size: 30px;
-//     margin-left: 10px;
-//     margin-right: 0px;
-//   }
-//   nav .ham {
-//     top: 10px;
-//     right: 10px;
-//     width: 30px;
-//     height: 14px;
-//   }
-//   nav .ham::after {
-//     letter-spacing: 0.05em;
-//   }
-//   .McButton {
-//     width: 30px;
-//     height: 14px;
-//   }
-// }
-
-// .fullscreen.open {
-//   opacity: 1; 
-//   visibility: visible;
-//   height: 100%;
-//   z-index: 1001;
-// }
-
-// .fullscreen {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 0%;
-//   background-color: $blue_primary;
-//   text-transform: uppercase;
-//   visibility: hidden;
-//   overflow: hidden;
-//   transition: opacity 0.35s, visibility 0.35s, height 0.35s
-// }
-
-// .header-container {
-//   height: 100%;
-//   min-height: 100vh;
-//   display: flex;
-//   padding: 60px 15px;
-//   align-items: center;
-//   justify-content: center;
-//   flex-wrap: wrap;
-//   pointer-events: auto;
-// }
-
-
-// ul.main-menu {
-//   width: 100%;
-//   letter-spacing: 0.2em;
-//   text-align: right;
-//   padding: 0;
-//   margin: 0;
-//   list-style: none;
-// }
-
-// .main-menu li {
-//   padding: 30px 0;
-// }
-
-// .main-menu li span.zh {
-//   margin-bottom: 10px;
-//   font-size: 1.5em;
-//   font-weight: 400;
-//   color: #ffffff;
-//   display: block;
-// }
-
-// .main-menu li span.en {
-//   font-size: 1rem;
-//   font-weight: 200;
-//   color: #b5b5b5;
-//   line-height: 1;
-//   display: block;
-// }
-
-// ul.sns-booking {
-//   text-align: right;
-// }
-
-// .subscribe-btn a{
-//   display: block;
-//   padding: 6px 16px;
-//   border: 1px solid #ffffff;
-//   color: #ffffff;
-//   display: inline-block;
-// }
-
-// .subscribe-btn span.zh {
-//    font-size: 1rem;
-//    line-height: 1.5;
-//    font-weight: 400;
-//    letter-spacing: 0.2em;
-//    color: #ffffff;
-// }
-
-/*   <!-- iconfont版本結束 -->   */
-
 
 
 /*--------cover--------*/
@@ -312,6 +58,7 @@ section.cover {
   padding: 0;
   background-color: $blue_primary;
   color: #ffffff;
+  min-height: 600px;
 }
 
 .cover_headline {
@@ -345,13 +92,11 @@ p.meta {
   padding-top: 24px;
 }
 
-
 // images
 .cover_images {
   background-color: $blue_primary;
   grid-column: 1/13;
   position: relative;
-  // width: 100%;
   display: block;
   min-height: 400px;
 }
@@ -448,8 +193,9 @@ img.ele03 {
     font-size: 60px;
     line-height: 75px;
   } 
+  section.cover,
   .cover_images {
-    min-height: 300px;
+    min-height: 350px;
   }
   img.ele03 {
     max-width: 20vw;
@@ -465,8 +211,9 @@ img.ele03 {
   .grid {
     grid-column-gap: 15px;
   }
+  section.cover,
   .cover_images {
-    min-height: 250px;
+    min-height: 300px;
   }
   img.ele03 {
     max-width: 30vw;
@@ -474,7 +221,7 @@ img.ele03 {
   } 
   .cover_headline {
     grid-column: 1/13;
-    padding-top: 40px;
+    padding-top: 20px;
   }
   h1 {
     font-size: 36px;
@@ -489,6 +236,8 @@ img.ele03 {
     line-height: 1.5;
     margin-top: 30px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
   p.meta {
     text-align: center;
@@ -1370,17 +1119,6 @@ ul.buy_more li {
   height: 65px;
   width: auto;
 }
-
-// @media screen and (max-width: 768px){
-//   .sponsor li a {
-//  display: block;
-//  padding-left: 10px;
-//  padding-right: 10px;
-// }
-// }
-
-
-
 
 // copyright
 footer {
